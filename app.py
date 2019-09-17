@@ -112,7 +112,7 @@ def github():
         project = content["repository"]["name"]
         appid = content["installation"]["id"]
         userfull = content["repository"]["full_name"]
-        listlabel = content["labels"]
+        listlabel = content["issue"]["labels"]
         tokenUser = userfull.split("/")
         user = tokenUser[0]
         pretitle = clean_msg(title)
