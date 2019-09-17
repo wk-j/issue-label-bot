@@ -1,34 +1,13 @@
 def checkstandardlabel(label):
     result = "No"
-    item = label.split("-")
-    for i in item:
-        if i == "bug" or i == "documentation" or i == "duplicate" or i == "enhancement" or i == "good first issue" or i == "help wanted" or i == "invalid":
-            result = i
+    for i in label:
+        if i["name"] == "bug" or i["name"] == "documentation" or i["name"] == "duplicate" or i["name"] == "enhancement" or i["name"] == "good first issue" or i["name"] == "help wanted" or i["name"] == "invalid":
+            result = i["name"]
             break
     return result
 
-def tosingleline(lines):
-    mystr = ''.join([line.strip() for line in lines])
-    return mystr
-
-def getlabels(labels):
-    data1 = str(labels).split('name="')
-    st = '")'
-    data2 = data1[1].split(st)
-    return data2[0]
-
-def pluslabel(datalabel):
-    label = ""
-    labelall = []
-    for j in datalabel:
-        print(j)
-        labelall.append(getlabels(tosingleline(j)))
-    for la in labelall:
-        label = label+"-"+la
-    return label
 def accepdata(pretitle,preDes,listlabel):
-    linelabel = pluslabel(listlabel)
-    label = checkstandardlabel(linelabel)
+    label = checkstandardlabel(listlabel)
     if label != "No":
         insertdata(pretitle,preDes,label)
 
