@@ -17,7 +17,7 @@ def insertdata(title,des,label,dtlist):
                                   password = dtlist[1],
                                   host = dtlist[2],
                                   port = dtlist[3],
-                                  database = dtlist[3])
+                                  database = dtlist[4])
 
     cursor = connection.cursor()
     postgres_insert_query = """ INSERT INTO %s (title, description, label) VALUES (%s,%s,%s)"""
