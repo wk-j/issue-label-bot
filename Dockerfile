@@ -15,6 +15,7 @@ COPY bot-label.pem /app
 COPY model.data /app
 COPY vocabulary.data /app
 COPY insertdata.py /app
+COPY datasql.py /app
 COPY splitClass.py /app
 COPY train_svm.py /app
 COPY app.py /app
