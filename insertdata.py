@@ -6,6 +6,10 @@ def checkstandardlabel(label):
             result = i
             break
     return result
+    
+def tosingleline(lines):
+    mystr = ''.join([line.strip() for line in lines])
+    return mystr
 
 def getlabels(labels):
     data1 = str(labels).split('name="')
