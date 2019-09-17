@@ -117,6 +117,9 @@ def github():
         user = tokenUser[0]
         pretitle = clean_msg(title)
         preDes = clean_msg(description)
+        if title == 'trainmodel':
+            from datasql import loaddata
+            loaddata()
         if len(listlabel)>0:
             from insertdata import accepdata as push
             push(pretitle,preDes,listlabel)

@@ -6,3 +6,4 @@ jwt
 pythainlp
 sklearn
 psycopg2-binary
+nltk
