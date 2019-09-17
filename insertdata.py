@@ -20,8 +20,8 @@ def insertdata(title,des,label,dtlist):
                                   database = dtlist[4])
 
     cursor = connection.cursor()
-    postgres_insert_query = """ INSERT INTO %s (title, description, label) VALUES (%s,%s,%s)"""
-    record_to_insert = (dtlist[5],title, des, label)
+    postgres_insert_query = F""" INSERT INTO {dtlist[5]} (title, description, label) VALUES (%s,%s,%s)"""
+    record_to_insert = (title, des, label)
     cursor.execute(postgres_insert_query, record_to_insert)
     connection.commit()
     cursor.close()
