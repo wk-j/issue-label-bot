@@ -1,4 +1,5 @@
 def data():
+    import os
     dtlist = []
     user = os.environ['USER']
     password = os.environ['PASS']
