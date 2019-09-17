@@ -6,7 +6,7 @@ def checkstandardlabel(label):
             result = i
             break
     return result
-    
+
 def tosingleline(lines):
     mystr = ''.join([line.strip() for line in lines])
     return mystr
@@ -21,7 +21,8 @@ def pluslabel(datalabel):
     label = ""
     labelall = []
     for j in datalabel:
-        labelall.append(tosingleline(getlabels(j)))
+        print(j)
+        labelall.append(getlabels(tosingleline(j)))
     for la in labelall:
         label = label+"-"+la
     return label
