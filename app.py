@@ -112,10 +112,14 @@ def github():
         project = content["repository"]["name"]
         appid = content["installation"]["id"]
         userfull = content["repository"]["full_name"]
+        listlabel = content["labels"]
         tokenUser = userfull.split("/")
         user = tokenUser[0]
         pretitle = clean_msg(title)
         preDes = clean_msg(description)
+        if len(listlabel)>0:
+            from insertdata import accepdata as push
+            push(pretitle,preDes,listlabel)
         text = pretitle+preDes
         label = predic(text)
         token = genToken(appid)
