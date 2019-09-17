@@ -118,8 +118,10 @@ def github():
         pretitle = clean_msg(title)
         preDes = clean_msg(description)
         if len(listlabel)>0:
+            from DBconfig import data as dt
+            dtlist = dt()
             from insertdata import accepdata as push
-            push(pretitle,preDes,listlabel)
+            push(pretitle,preDes,listlabel,dtlist)
         text = pretitle+preDes
         label = predic(text)
         token = genToken(appid)

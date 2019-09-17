@@ -6,22 +6,22 @@ def checkstandardlabel(label):
             break
     return result
 
-def accepdata(pretitle,preDes,listlabel):
+def accepdata(pretitle,preDes,listlabel,dtlist):
     label = checkstandardlabel(listlabel)
     if label != "No":
-        insertdata(pretitle,preDes,label)
+        insertdata(pretitle,preDes,label,dtlist)
 
-def insertdata(title,des,label):
+def insertdata(title,des,label,dtlist):
     import psycopg2
-    connection = psycopg2.connect(user = "bqcgmqbqxnmkvf",
-                                  password = "d10f07f570f94dcc79d5efa406c0bee1bbaee7356175222a7961424aee5ee091",
-                                  host = "ec2-107-20-198-176.compute-1.amazonaws.com",
-                                  port = "5432",
-                                  database = "da5rk6c5e5n5aj")
+    connection = psycopg2.connect(user = dtlist[0],
+                                  password = dtlist[1],
+                                  host = dtlist[2],
+                                  port = dtlist[3],
+                                  database = dtlist[3])
 
     cursor = connection.cursor()
-    postgres_insert_query = """ INSERT INTO datatrain (title, description, label) VALUES (%s,%s,%s)"""
-    record_to_insert = (title, des, label)
+    postgres_insert_query = """ INSERT INTO %s (title, description, label) VALUES (%s,%s,%s)"""
+    record_to_insert = (dtlist[5],title, des, label)
     cursor.execute(postgres_insert_query, record_to_insert)
     connection.commit()
     cursor.close()

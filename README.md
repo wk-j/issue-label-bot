@@ -1,3 +1,7 @@
+## Config Database
+```
+edite DBconfig
+```
 ## Using
 Bot Label
 

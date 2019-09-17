@@ -15,6 +15,7 @@ COPY bot-label.pem /app
 COPY model.data /app
 COPY vocabulary.data /app
 COPY insertdata.py /app
+COPY DBconfig.py /app
 COPY app.py /app
 
 CMD python3 app.py
