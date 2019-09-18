@@ -9,7 +9,9 @@ def savefile(dttitle,dtdescription,dtlabel,name):
         while i<len(dttitle):
             writer.writerow({'Label': dtlabel[i], 'Title': dttitle[i], 'Description': dtdescription[i]})
             i = i+1
-    print("Save success")
+    import logging
+    logging.getLogger().setLevel(logging.INFO)
+    logging.info("Save success")
 
 def setfilename(name):
     itemname = name.split("/")
@@ -37,10 +39,12 @@ def pluslabel(datalabel):
 
 def getByname(token,name):
     from github import Github
-    print("login.....")
+    import logging
+    logging.getLogger().setLevel(logging.INFO)
+    logging.info("login.....")
     g = Github(token)
-    print("Login success")
-    print("Load Repository ....")
+    logging.info("Login success")
+    logging.info("Load Repository ....")
     dttitle = []
     dtdescription = []
     dtlabel = []
@@ -54,15 +58,17 @@ def getByname(token,name):
             dttitle.append(title)
             dtdescription.append(description)
             dtlabel.append(label)
-    print("Load success")
+    logging.info("Load success")
     savefile(dttitle,dtdescription,dtlabel,setfilename(name))
 
 def getAll(token):
     from github import Github
-    print("login.....")
+    import logging
+    logging.getLogger().setLevel(logging.INFO)
+    logging.info("login.....")
     g = Github(token)
-    print("Login success")
-    print("Load Repository ....")
+    logging.info("Login success")
+    logging.info("Load Repository ....")
     dttitle = []
     dtdescription = []
     dtlabel = []
@@ -76,8 +82,5 @@ def getAll(token):
                 dttitle.append(title)
                 dtdescription.append(description)
                 dtlabel.append(label)
-    print("Load success")
+    logging.info("Load success")
     savefile(dttitle,dtdescription,dtlabel,"Documents/data.csv")
-
-if __name__ == '__main__':
-    print("import success")

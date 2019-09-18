@@ -1,5 +1,7 @@
 
 def readfile():
+    import logging
+    logging.getLogger().setLevel(logging.INFO)
     import csv
     title = []
     des = []
@@ -9,17 +11,17 @@ def readfile():
         line_count = 0
         for row in csv_reader:
             if line_count == 0:
-                #print(f'Column names are {", ".join(row)}')
                 line_count += 1
-            #print(f'\t{row["name"]} works in the {row["department"]} department, and was born in {row["birthday month"]}.')
             title.append(row['Title'])
             des.append(row['Description'])
             label.append(row['Label'])
             line_count += 1
-        print(f'Processed {line_count} lines.')
+        logging.info(f'Processed {line_count} lines.')
     return title,des,label
 
 def insertdata():
+    import logging
+    logging.getLogger().setLevel(logging.INFO)
     import psycopg2
     connection = psycopg2.connect(user = "your user",
                                     password = "your password",
@@ -35,7 +37,7 @@ def insertdata():
         record_to_insert = (title[i], des[i], label[i])
         cursor.execute(postgres_insert_query, record_to_insert)
         i = i+1
-        print(i)
+        logging.info(i)
     connection.commit()
     cursor.close()
     connection.close()

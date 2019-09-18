@@ -1,5 +1,7 @@
 
 def splitclass(preTitle,preDescription,preLabel):
+    import logging
+    logging.getLogger().setLevel(logging.INFO)
     listbug = []
     listdoc = []
     listdup = []
@@ -17,11 +19,11 @@ def splitclass(preTitle,preDescription,preLabel):
         elif data == 'help wanted': listhelp.append(preTitle[i]+preDescription[i])
         elif data == 'invalid': listinv.append(preTitle[i]+preDescription[i])
         i = i +1
-    print('bug : '+str(len(listbug)))
-    print('documentation : '+str(len(listdoc)))
-    print('duplicate : '+str(len(listdup)))
-    print('enhancement : '+str(len(listenh)))
-    print('good first issue : '+str(len(listgood)))
-    print('help wanted : '+str(len(listhelp)))
-    print('invalid : '+str(len(listinv)))
+    logging.info('bug : '+str(len(listbug)))
+    logging.info('documentation : '+str(len(listdoc)))
+    logging.info('duplicate : '+str(len(listdup)))
+    logging.info('enhancement : '+str(len(listenh)))
+    logging.info('good first issue : '+str(len(listgood)))
+    logging.info('help wanted : '+str(len(listhelp)))
+    logging.info('invalid : '+str(len(listinv)))
     return listbug,listdoc,listdup,listenh,listgood,listhelp,listinv

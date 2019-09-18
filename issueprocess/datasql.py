@@ -7,6 +7,8 @@ def cutDes(preDescription):
     return preDescription
 def loaddata(user,password,host,port,database,table):
     import psycopg2
+    import logging
+    logging.getLogger().setLevel(logging.INFO)
     connection = psycopg2.connect(user=user,
                                   password=password,
                                   host=host,
@@ -15,7 +17,7 @@ def loaddata(user,password,host,port,database,table):
 
     cursor = connection.cursor()
     postgreSQL_select_Query = F"select * from {table}"
-    print(postgreSQL_select_Query)
+    logging.info(postgreSQL_select_Query)
     cursor.execute(postgreSQL_select_Query)
     data_records = cursor.fetchall() 
     title = []
@@ -25,9 +27,6 @@ def loaddata(user,password,host,port,database,table):
         title.append(row[1])
         des.append(row[2])
         lable.append(row[3])
-       #print("Title = ", row[1], )
-       #print("Description = ", row[2])
-       #print("Label  = ", row[3], "\n")
     des = cutDes(des)
     cursor.close()
     connection.close()

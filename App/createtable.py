@@ -1,5 +1,6 @@
 import psycopg2
-
+import logging
+logging.getLogger().setLevel(logging.INFO)
 try:
     connection = psycopg2.connect(user = "your user",
                                     password = "your password",
@@ -16,13 +17,13 @@ try:
     
     cursor.execute(create_table_query)
     connection.commit()
-    print("Table created successfully in PostgreSQL ")
+    logging.info("Table created successfully in PostgreSQL ")
 
 except (Exception, psycopg2.Error) as error :
-    print ("Error while connecting to PostgreSQL", error)
+    logging.info ("Error while connecting to PostgreSQL", error)
 finally:
     #closing database connection.
         if(connection):
             cursor.close()
             connection.close()
-            print("PostgreSQL connection is closed")
+            logging.info("PostgreSQL connection is closed")

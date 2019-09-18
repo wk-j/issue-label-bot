@@ -8,7 +8,9 @@ def savefile(dttitle,dtdescription,dtlabel,name):
         while i<len(dttitle):
             writer.writerow({'Label': dtlabel[i], 'Title': dttitle[i], 'Description': dtdescription[i]})
             i = i+1
-    print("Save success")
+    import logging
+    logging.getLogger().setLevel(logging.INFO)
+    logging.info("Save success")
 
 #ลบ <>
 def deltag(msg):

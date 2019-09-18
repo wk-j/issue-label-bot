@@ -16,13 +16,6 @@ parser.add_argument('--database', type=str,
 parser.add_argument('--table', type=str,
                     help='tabel of database')
 args = parser.parse_args()
-print(args.user)
-print(args.password)
-print(args.host)
-print(args.port)
-print(args.database)
-print(args.table)
-
 import issueprocess.datasql as load
 preTitle,preDescription,preLabel = load.loaddata(args.user,args.password,args.host,args.port,args.database,args.table)
 import issueprocess.splitClass as spl
