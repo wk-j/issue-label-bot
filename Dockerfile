@@ -8,14 +8,14 @@ RUN apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
-COPY requirements.txt /app
+COPY App/requirements.txt /app
 RUN pip3 install -r requirements.txt
 
-COPY bot-label.pem /app
-COPY model.data /app
-COPY vocabulary.data /app
-COPY insertdata.py /app
-COPY DBconfig.py /app
-COPY app.py /app
+COPY App/bot-label.pem /app
+COPY App/model.data /app
+COPY App/vocabulary.data /app
+COPY App/insertdata.py /app
+COPY App/DBconfig.py /app
+COPY App/app.py /app
 
 CMD python3 app.py
