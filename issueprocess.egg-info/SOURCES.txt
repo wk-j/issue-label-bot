@@ -1,0 +1,16 @@
+README.md
+loadissue
+setup.py
+trainmodel
+issueprocess/__init__.py
+issueprocess/app.py
+issueprocess/data.py
+issueprocess/datasql.py
+issueprocess/predata.py
+issueprocess/splitClass.py
+issueprocess/train_svm.py
+issueprocess.egg-info/PKG-INFO
+issueprocess.egg-info/SOURCES.txt
+issueprocess.egg-info/dependency_links.txt
+issueprocess.egg-info/requires.txt
+issueprocess.egg-info/top_level.txt

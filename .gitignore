@@ -1,1 +1,8 @@
-http
+Documents
+Data
+build
+Model
+dist
+modelissue.egg-info
+Pipfile
+Pipfile.lock
