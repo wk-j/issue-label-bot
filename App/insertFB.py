@@ -1,4 +1,4 @@
-def insert():
+def insert(label,title,des):
     import pyrebase
     import datetime
     config = {
@@ -25,9 +25,9 @@ def insert():
     # data to save
     data = {
         "Date": str(datetime.datetime.now()),
-        "Label":"testlabel2",
-        "Title": "testtitle2",
-        "Description":"testdrescription2"
+        "Label":label,
+        "Title": title,
+        "Description":des
     }
     # Pass the user's idToken to the push method
     results = db.child("DATA").push(data, user['idToken'])
