@@ -2,6 +2,7 @@ flask
 flask_restful
 requests
 PyGithub
+pyrebase
 jwt
 pythainlp
 sklearn
