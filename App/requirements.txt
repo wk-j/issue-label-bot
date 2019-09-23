@@ -2,8 +2,7 @@ flask
 flask_restful
 requests
 PyGithub
-Pyrebase
-jwt
 pythainlp
 sklearn
 psycopg2-binary
+Pyrebase
