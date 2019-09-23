@@ -6,3 +6,5 @@ jwt
 pythainlp
 sklearn
 psycopg2-binary
+selenium
+pyrebase
