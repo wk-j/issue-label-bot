@@ -1,5 +1,5 @@
 
-jws
+jws==0.1.3
 flask
 flask_restful
 requests
