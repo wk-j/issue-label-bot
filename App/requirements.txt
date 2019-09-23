@@ -1,5 +1,4 @@
 
-jws==0.1.2
 flask
 flask_restful
 requests
@@ -8,4 +7,3 @@ pythainlp
 sklearn
 psycopg2-binary
 jwt
-Pyrebase
