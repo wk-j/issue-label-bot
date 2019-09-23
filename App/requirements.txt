@@ -1,3 +1,5 @@
+
+jws
 flask
 flask_restful
 requests
@@ -5,4 +7,5 @@ PyGithub
 pythainlp
 sklearn
 psycopg2-binary
+jwt
 Pyrebase
