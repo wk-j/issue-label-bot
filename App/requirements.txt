@@ -6,6 +6,5 @@ PyGithub
 pythainlp
 sklearn
 psycopg2-binary
-jose
 jwt
 pyrebase
