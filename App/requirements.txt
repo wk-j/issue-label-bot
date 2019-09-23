@@ -7,4 +7,4 @@ pythainlp
 sklearn
 psycopg2-binary
 jwt
-pyrebase
+firebase-admin 

@@ -13,6 +13,7 @@ RUN pip3 install -r requirements.txt
 
 COPY App/bot-label.pem /app
 COPY App/model.data /app
+COPY App/bot.json /app
 COPY App/vocabulary.data /app
 COPY App/insertdata.py /app
 COPY App/DBconfig.py /app
