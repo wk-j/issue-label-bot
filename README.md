@@ -47,3 +47,6 @@ and edit DBconfig to your detail database and deploy
 
 Bot Label
 URL ::  https://github.com/apps/bot-label
+
+Show Bot Working
+URL :: https://bot-label-615f6.web.app

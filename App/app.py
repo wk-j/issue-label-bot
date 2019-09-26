@@ -125,7 +125,7 @@ def github():
         text = pretitle+preDes
         label = predic(text)
         token = genToken(appid)
-        changlabel(token,label,user,project,number)
+        changlabel(token,label,user,userfull,number)
         from insertFB import insert as ins
         ins(label,title,project,number)
     return "Complete"
