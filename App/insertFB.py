@@ -10,7 +10,7 @@ cred = credentials.Certificate('bot.json')
 firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://bot-label-615f6.firebaseio.com'
 })
-def insert(label,title,des):
+def insert(label,title,project,number):
     tz_Bankok = pytz.timezone('Asia/Bangkok')
     datetime_Bankok = datetime.now(tz_Bankok)
     ref = db.reference('DATA')
@@ -18,5 +18,6 @@ def insert(label,title,des):
         "Date": str(datetime_Bankok),
         "Label":label,
         "Title":title,
-        "Description":des
+        "Project":project,
+        "Number":number
     })
