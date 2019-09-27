@@ -133,7 +133,6 @@ def github():
     elif action =="closed":
         userfull = content["repository"]["full_name"]
         number = content["issue"]["number"]
-        from updateFB import up as upFB
         upFB(userfull,number)
     return "Complete"
 
