@@ -128,6 +128,12 @@ def github():
         changlabel(token,label,user,project,number)
         from insertFB import insert as ins
         ins(label,title,userfull,number)
+    elif action =="closed":
+        userfull = content["repository"]["full_name"]
+        number = content["issue"]["number"]
+        from updateFB import up as upFB
+        upFB(userfull,number)
     return "Complete"
+
 
 app.run(debug=True,host='0.0.0.0',port=port)
