@@ -13,6 +13,8 @@ from jwt import (
     JWT,
     jwk_from_pem,
 )
+from firebase import insert as ins
+from firebase import up as upFB
 
 port = sys.argv[1]
 app = Flask(__name__)
@@ -126,7 +128,7 @@ def github():
         label = predic(text)
         token = genToken(appid)
         changlabel(token,label,user,project,number)
-        from insertFB import insert as ins
+        
         ins(label,title,userfull,number)
     elif action =="closed":
         userfull = content["repository"]["full_name"]

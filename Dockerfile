@@ -17,8 +17,7 @@ COPY App/bot.json /app
 COPY App/vocabulary.data /app
 COPY App/insertdata.py /app
 COPY App/DBconfig.py /app
-COPY App/insertFB.py /app
-COPY App/updateFB.py /app
+COPY App/firebase.py /app
 COPY App/app.py /app
 
 CMD python3 app.py

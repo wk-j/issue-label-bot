@@ -10,10 +10,11 @@ cred = credentials.Certificate('bot.json')
 firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://bot-label-615f6.firebaseio.com'
 })
+ref = db.reference('DATA')
+
 def insert(label,title,project,number):
     tz_Bankok = pytz.timezone('Asia/Bangkok')
     datetime_Bankok = datetime.now(tz_Bankok)
-    ref = db.reference('DATA')
     ref.push({
         "Date": str(datetime_Bankok),
         "Label":label,
@@ -21,4 +22,15 @@ def insert(label,title,project,number):
         "Project":project,
         "Number":number,
         "Status":"Open"
+    })
+def up(pro,num):
+    dt = ref.get()
+    idkey = ''
+    for data in ref.get():
+        if pro == dt[data]['Project'] and num == dt[data]['Number']:
+            idkey = data
+            print(idkey)
+    data_ref = ref.child(idkey)
+    data_ref.update({
+        'Status': 'Close'
     })
