@@ -8,7 +8,7 @@ import pytz
 cred = credentials.Certificate('bot.json')
 # Initialize the app with a service account, granting admin privileges
 firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://bot-label-615f6.firebaseio.com'
+    'databaseURL': 'https://bot-label-36a1f.firebaseio.com'
 })
 ref = db.reference('DATA')
 
